@@ -11,3 +11,13 @@ a {
   margin-bottom: 20px;
   color: #333;
 }
+
+.nav-item {
+  .nav-link {
+    padding: 10px 0px;
+  }
+  .active {
+    background-color: darkgoldenrod;
+    color: white !important;
+  }
+}

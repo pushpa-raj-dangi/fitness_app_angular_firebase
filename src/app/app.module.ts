@@ -1,4 +1,4 @@
-import { WorkoutsModule } from './health/workouts/workouts.module';
+import { Routes } from '@angular/router';
 import { MealsModule } from './health/meals/meals.module';
 import { HealthModule } from './health/health.module';
 import { Store } from './../store';

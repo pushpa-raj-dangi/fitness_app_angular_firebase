@@ -148,4 +148,8 @@ export class AuthService {
   logout() {
     return this.afAuth.signOut();
   }
+
+  get authState() {
+    return this.afAuth.authState;
+  }
 }
