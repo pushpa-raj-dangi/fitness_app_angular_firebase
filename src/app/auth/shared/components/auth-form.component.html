@@ -1,0 +1,30 @@
+<div class="container">
+  <form [formGroup]="form" class="m-auto p-4 mt-5 h-100 wrapper" style="width: 25%;" (ngSubmit)="onSubmit()">
+    <div class="text-center">
+      <ng-content select="h1"></ng-content>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" formControlName="email" id="email" aria-describedby="emailHelp">
+      <div class="alert alert-danger" *ngIf="emailInvalid">Invalid email format</div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" formControlName="password" id="password">
+      <div class="alert alert-danger" *ngIf="passwordInvalid">Password is required</div>
+    </div>
+    <ng-content select=".error"></ng-content>
+    <div class="footer-form">
+      <div>
+        <ng-content select="button"></ng-content>
+
+      </div>
+
+      <div class="link-btn">
+        <ng-content select="a"></ng-content>
+
+      </div>
+    </div>
+  </form>
+
+</div>
