@@ -1,3 +1,6 @@
+import { WorkoutsModule } from './health/workouts/workouts.module';
+import { MealsModule } from './health/meals/meals.module';
+import { HealthModule } from './health/health.module';
 import { Store } from './../store';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,7 +13,7 @@ import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, NavComponent],
-  imports: [BrowserModule, AppRoutingModule, AuthModule],
+  imports: [BrowserModule, AppRoutingModule, AuthModule, HealthModule],
   providers: [Store],
   bootstrap: [AppComponent],
 })

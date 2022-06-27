@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { map, Observable, Subscription } from 'rxjs';
 import { AuthService, User } from './../../auth/shared/services/auth.service';
 import { Store } from './../../../store';
@@ -11,7 +12,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 export class AppComponent implements OnInit, OnDestroy {
   user$!: Observable<User>;
   subscription!: Subscription;
-  constructor(private store: Store, private authService: AuthService) {}
+  constructor(
+    private store: Store,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.subscription = this.authService.auth$.subscribe();
@@ -20,7 +25,8 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-  onLogout() {
-    console.log('logout');
+  async onLogout() {
+    await this.authService.logout();
+    this.router.navigate(['/auth/login']);
   }
 }
