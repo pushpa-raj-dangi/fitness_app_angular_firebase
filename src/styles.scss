@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap/dist/css/bootstrap.min.css";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 
 a {
   text-decoration: none;
@@ -19,5 +20,68 @@ a {
   .active {
     background-color: darkgoldenrod;
     color: white !important;
+  }
+}
+
+.skeleton-1pi0n81px78:empty {
+  position: relative;
+  height: 170px;
+  background-color: #ffffff;
+  border-radius: 0px 0px 0px 0px;
+  background-image: linear-gradient(#cccccc 20px, transparent 0),
+    radial-gradient(circle 14px at 14px 14px, #cccccc 13px, transparent 14px),
+    linear-gradient(#cccccc 20px, transparent 0),
+    radial-gradient(circle 14px at 14px 14px, #cccccc 13px, transparent 14px),
+    linear-gradient(#cccccc 20px, transparent 0),
+    radial-gradient(circle 14px at 14px 14px, #cccccc 13px, transparent 14px);
+  background-repeat: repeat-y;
+  background-size: 300px 170px, 28px 170px, 300px 170px, 28px 170px, 300px 170px,
+    28px 170px;
+  background-position: 70px 125px, 20px 120px, 70px 75px, 20px 70px, 70px 25px,
+    20px 20px;
+}
+.skeleton-1pi0n81px78:empty:before {
+  content: " ";
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 170px;
+  -webkit-mask-image: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  -webkit-mask-repeat: repeat-y;
+  -webkit-mask-size: 50px 170px;
+  -webkit-mask-position: -20% 0;
+  background-image: linear-gradient(rgba(102, 102, 102, 1) 20px, transparent 0),
+    radial-gradient(
+      circle 14px at 14px 14px,
+      rgba(102, 102, 102, 1) 13px,
+      transparent 14px
+    ),
+    linear-gradient(rgba(102, 102, 102, 1) 20px, transparent 0),
+    radial-gradient(
+      circle 14px at 14px 14px,
+      rgba(102, 102, 102, 1) 13px,
+      transparent 14px
+    ),
+    linear-gradient(rgba(102, 102, 102, 1) 20px, transparent 0),
+    radial-gradient(
+      circle 14px at 14px 14px,
+      rgba(102, 102, 102, 1) 13px,
+      transparent 14px
+    );
+  background-repeat: repeat-y;
+  background-size: 300px 170px, 28px 170px, 300px 170px, 28px 170px, 300px 170px,
+    28px 170px;
+  background-position: 70px 125px, 20px 120px, 70px 75px, 20px 70px, 70px 25px,
+    20px 20px;
+  animation: shineForSkeleton-1pi0n81px78 2s infinite;
+}
+@keyframes shineForSkeleton-1pi0n81px78 {
+  to {
+    -webkit-mask-position: 120% 0;
   }
 }

@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light my-0 py-0 mb-3">
-  <div class="container-fluid">
+<nav *ngIf="user;else loading" class="navbar navbar-expand-lg navbar-light bg-light my-0 py-0 mb-3">
+  <div class="container">
     <a class="navbar-brand" routerLink="/">FITNESS</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
       aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,3 +23,6 @@
     </div>
   </div>
 </nav>
+<ng-template #loading>
+  <h1>Loading nav</h1>
+</ng-template>

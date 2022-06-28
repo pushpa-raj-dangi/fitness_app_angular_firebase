@@ -1,3 +1,5 @@
+import { RouterModule } from '@angular/router';
+import { ListItemComponent } from './components/list-item/list-item.component';
 import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -13,8 +15,10 @@ import { MealService } from './services/meals/meal.service';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    RouterModule,
   ],
-  exports: [],
+  declarations: [ListItemComponent],
+  exports: [ListItemComponent],
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders<any> {

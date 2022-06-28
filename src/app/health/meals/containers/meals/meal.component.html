@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <span *ngIf="meal$ | async as meal;else title">
+
+      {{meal.name ? 'Edit' :'Create'}} meal
+    </span>
+    <ng-template #title>
+      loading...
+    </ng-template>
+    <meal-form (meal)="addMeal($event)" (create)="addMeal($event)"></meal-form>
+  </div>
+</div>

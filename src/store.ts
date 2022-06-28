@@ -5,6 +5,7 @@ import { pluck } from 'rxjs/operators';
 
 const state: State = {
   user: undefined,
+  meals: undefined,
 };
 
 export class Store {

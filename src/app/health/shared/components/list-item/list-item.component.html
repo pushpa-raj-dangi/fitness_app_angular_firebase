@@ -1,0 +1,23 @@
+<div class="list-group">
+  <div class="list-group-item list-group-item-action">
+
+    <p [routerLink]="getRoute(item)">
+      {{item.name}}
+    </p>
+    <p>
+      {{item.ingredients}}
+    </p>
+    <div *ngIf="toggled">
+
+      <div class="my-4 confirm-dialog alert alert-info">
+        <div class="mb-1">
+          Are you sure you want to delete this?
+        </div>
+        <br>
+        <button class="btn btn-danger me-3 btn-sm" type="button" (click)="removeItem()">Yes</button>
+        <button class="btn btn-outline-danger btn-sm" type="button" (click)="toggle()">No</button>
+      </div>
+    </div>
+    <button class="btn btn-success" type="button" (click)="toggle()">Delete</button>
+  </div>
+</div>
