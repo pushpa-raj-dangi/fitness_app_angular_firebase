@@ -4,9 +4,13 @@
     <p [routerLink]="getRoute(item)">
       {{item.name}}
     </p>
-    <p>
-      {{item.ingredients}}
+    <p *ngIf="item.ingredients;else workout">
+      {{item.ingredients | join}}
     </p>
+    <ng-template #workout>
+      <span>{{item}}</span>
+    </ng-template>
+
     <div *ngIf="toggled">
 
       <div class="my-4 confirm-dialog alert alert-info">

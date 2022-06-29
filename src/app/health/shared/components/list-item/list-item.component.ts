@@ -1,3 +1,4 @@
+import { Workout } from './../../services/workouts/workouts.service';
 import { Meal } from './../../services/meals/meal.service';
 import {
   ChangeDetectionStrategy,
@@ -15,13 +16,13 @@ import {
 })
 export class ListItemComponent {
   toggled = false;
-  @Input() item!: any;
+  @Input() item!: Meal | Workout | any;
   @Output() remove = new EventEmitter<any>();
 
   constructor() {}
 
   getRoute(item: any) {
-    return [`../meals`, item.$key];
+    return [`../${item.ingredients ? 'meals' : 'workouts'}`, item.$key];
   }
 
   removeItem() {
