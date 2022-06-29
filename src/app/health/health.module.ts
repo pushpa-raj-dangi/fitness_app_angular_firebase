@@ -23,7 +23,7 @@ const ROUTES: Routes = [
     canActivate: [AuthGuard],
 
     loadChildren: () =>
-      import('./workouts/workouts.module').then((m) => m.WorkoutsModule),
+      import('./workouts/workouts.module').then((m) => m.WorkOutsModule),
   },
 ];
 

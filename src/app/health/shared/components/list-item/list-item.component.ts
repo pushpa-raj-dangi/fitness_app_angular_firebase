@@ -15,7 +15,7 @@ import {
 })
 export class ListItemComponent {
   toggled = false;
-  @Input() item!: Meal;
+  @Input() item!: any;
   @Output() remove = new EventEmitter<any>();
 
   constructor() {}

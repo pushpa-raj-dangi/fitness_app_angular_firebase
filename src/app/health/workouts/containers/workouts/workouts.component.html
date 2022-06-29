@@ -1,1 +1,27 @@
-<p>Workout works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+
+
+      <a class="btn btn-primary" routerLink="/workouts/new">Create New</a>
+
+      <hr>
+
+
+
+      <div *ngIf="workouts$ |async as workouts;else loading;">
+        <div *ngIf="!workouts">
+          No workouts, add a new workout to start
+        </div>
+
+        <list-item (remove)="remove($event)" *ngFor="let workout of workouts" [item]="workout">
+
+        </list-item>
+
+      </div>
+      <ng-template #loading>
+        <div class="skeleton-1pi0n81px78"></div>
+      </ng-template>
+    </div>
+  </div>
+</div>

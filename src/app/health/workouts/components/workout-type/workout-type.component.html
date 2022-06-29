@@ -1,0 +1,18 @@
+<div class="d-flex align-items-center">
+  <ul class="list-group my-3" *ngFor="let item of selectors">
+
+    <a class="list-group-item d-flex flex-md-row align-items-center mx-2" [class.active]="item===value"
+      (click)="setSelected(item)">
+      <div>
+        <i class="bi-alarm-fill mx-1"></i>
+      </div>
+      <div>
+        <p class="p-0  m-0">
+          {{item | uppercase}}
+
+        </p>
+      </div>
+    </a>
+
+  </ul>
+</div>

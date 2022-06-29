@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="py-3 my-3 bg-light px-3 rounded-1" *ngIf="workout$ | async as workout;else title">
+      <i class="bi-heart-fill text-danger"></i>
+
+      {{workout.name ? 'Edit' :'Create'}} workout
+    </div>
+    <ng-template #title>
+      <div class="bg-light py-3 px-3 rounded-1">
+        <h4 class="text-dark">Loading...</h4>
+      </div>
+    </ng-template>
+    <div *ngIf="workout$ | async as workout; else loading">
+
+      <workout-form (workoutFrom)="addWorkot($event)" (create)="addWorkot($event)" [workout]="workout"
+        (update)="updateWorkout($event)" (remove)="removeWorkout($event)"></workout-form>
+
+    </div>
+    <ng-template #loading>
+      <div class="skeleton-1pi0n81px78 w-100"></div>
+    </ng-template>
+
+  </div>
+</div>

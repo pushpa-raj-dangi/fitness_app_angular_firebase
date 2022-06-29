@@ -1,3 +1,4 @@
+import { WorkOutsService } from './services/workouts/workouts.service';
 import { RouterModule } from '@angular/router';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { CommonModule } from '@angular/common';
@@ -24,7 +25,7 @@ export class SharedModule {
   static forRoot(): ModuleWithProviders<any> {
     return {
       ngModule: SharedModule,
-      providers: [MealService],
+      providers: [MealService, WorkOutsService],
     };
   }
 }
