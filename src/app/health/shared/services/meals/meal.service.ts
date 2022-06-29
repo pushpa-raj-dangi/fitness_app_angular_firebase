@@ -76,11 +76,12 @@ export class MealService {
   }
 
   removeMeal(key: Meal) {
-    console.log(key);
-
     return this.db.list(`meals/${this.id}/items`).remove(key.$key);
   }
 
+  updateMeal(key: string, meal: Meal) {
+    return this.db.object(`meals/${this.id}/items/${key}`).update(meal);
+  }
   getMeal(id: string) {
     if (!id) return of({});
 

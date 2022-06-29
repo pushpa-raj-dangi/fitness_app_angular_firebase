@@ -1,12 +1,24 @@
 <div class="row">
   <div class="col-md-4 offset-md-4">
-    <span *ngIf="meal$ | async as meal;else title">
+    <div class="py-3 my-3 bg-light px-3 rounded-1" *ngIf="meal$ | async as meal;else title">
+      <i class="bi-heart-fill text-danger"></i>
 
       {{meal.name ? 'Edit' :'Create'}} meal
-    </span>
+    </div>
     <ng-template #title>
-      loading...
+      <div class="bg-light py-3 px-3 rounded-1">
+        <h4 class="text-dark">Loading...</h4>
+      </div>
     </ng-template>
-    <meal-form (meal)="addMeal($event)" (create)="addMeal($event)"></meal-form>
+    <div *ngIf="meal$ | async as meal; else loading">
+
+      <meal-form (mealFrom)="addMeal($event)" (create)="addMeal($event)" [meal]="meal" (update)="updateMeal($event)"
+        (remove)="removeMeal($event)"></meal-form>
+
+    </div>
+    <ng-template #loading>
+      <div class="skeleton-1pi0n81px78 w-100"></div>
+    </ng-template>
+
   </div>
 </div>
