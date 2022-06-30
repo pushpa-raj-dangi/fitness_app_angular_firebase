@@ -82,6 +82,7 @@ export class MealService {
   updateMeal(key: string, meal: Meal) {
     return this.db.object(`meals/${this.id}/items/${key}`).update(meal);
   }
+
   getMeal(id: string) {
     if (!id) return of({});
 

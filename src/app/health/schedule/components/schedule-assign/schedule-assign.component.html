@@ -1,0 +1,25 @@
+<div>
+
+  <h1> Assign {{section.type}}</h1>
+  <button class="btn btn-primary" [routerLink]="getRoute(section.type)">
+    New {{section.type}}
+  </button>
+
+  <div>
+    <span *ngIf="!list?.length">
+      Nothing here
+    </span>
+    <div *ngFor="let item of list" [class.active]="exists(item.name)" (click)="toggleItem(item.name)">
+      {{item.name}}
+    </div>
+
+    <div>
+      <button class="btn btn-primary" (click)="updateAssign()">
+        Update
+      </button>
+      <button class="btn btn-danger" (click)="cancelAssign()">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>

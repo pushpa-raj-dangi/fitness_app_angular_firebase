@@ -8,7 +8,7 @@
       {{item.ingredients | join}}
     </p>
     <ng-template #workout>
-      <span>{{item}}</span>
+      <span>{{item | workout}}</span>
     </ng-template>
 
     <div *ngIf="toggled">

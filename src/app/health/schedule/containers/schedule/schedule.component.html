@@ -1,1 +1,18 @@
-<h1>Schddule wirk</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 offset-md-3">
+      <div class="bg-light p-3 rounded-2 shadow-sm">
+
+        <app-schedule-calendar [date]="date$ | async" [items]="schedule$ | async" (select)="changeSection($event)"
+          (change)="changeDate($event)">
+        </app-schedule-calendar>
+
+        <schedule-assign *ngIf="open" [section]="selected$ | async" (update)="assignItem($event)"
+          (cancel)="closeAssign()" [list]="list$ | async">
+
+        </schedule-assign>
+
+      </div>
+    </div>
+  </div>
+</div>

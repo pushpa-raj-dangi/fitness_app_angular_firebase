@@ -1,1 +1,8 @@
-<p>schedule-calendar works!</p>
+<app-schedule-controls [selected]="selectedDate" (move)="onChange($event)"></app-schedule-controls>
+<hr>
+<app-schedule-days [selected]="selectedDayIndex" (select)="selectDay($event)"></app-schedule-days>
+
+<schedule-section *ngFor="let section of sections" [name]="section.name" [section]="getSection(section.key)"
+  (select)="selectSection($event,section.key)">
+
+</schedule-section>

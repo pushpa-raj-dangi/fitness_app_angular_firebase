@@ -1,1 +1,8 @@
-<p>schedule-days works!</p>
+<div class="d-flex justify-content-between mt-4">
+  <button class="btn btn-outline-info rounded-circle" style="width: 40px ;height: 40px;"
+    *ngFor="let day of days; index as i" (click)="selectDay(i)" [class.active]="i===selected">
+    <span>
+      {{day}}
+    </span>
+  </button>
+</div>

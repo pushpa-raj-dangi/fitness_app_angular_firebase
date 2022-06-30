@@ -1,15 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 @Component({
   selector: 'app-schedule-controls',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './schedule-controls.component.html',
-  styleUrls: ['./schedule-controls.component.scss']
+  styleUrls: ['./schedule-controls.component.scss'],
 })
 export class ScheduleControlsComponent implements OnInit {
+  offset = 0;
+  @Input()
+  selected!: Date;
+  @Output()
+  move = new EventEmitter<number>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  moveDate(offset: number) {
+    this.offset = offset;
+    this.move.emit(offset);
   }
-
 }
